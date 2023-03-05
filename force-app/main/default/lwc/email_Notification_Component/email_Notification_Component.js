@@ -6,7 +6,6 @@ import { NavigationMixin } from "lightning/navigation";
 
 export default class EmailNotification extends NavigationMixin(LightningElement) {
 
-//@api recordId;
 @api emailRead=false;
 @api emailMessageId;
 @api activityId;
