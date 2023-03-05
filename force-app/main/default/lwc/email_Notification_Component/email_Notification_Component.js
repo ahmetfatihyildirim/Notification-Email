@@ -14,6 +14,10 @@ connectedCallback(){
     this.GetRecordsFromEmailMessageObject();
     this.GetRecordsFromTaskObject();
 }
+renderedCallback(){
+    this.GetRecordsFromEmailMessageObject();
+    this.GetRecordsFromTaskObject();
+}
 
 GetRecordsFromEmailMessageObject(){
     getRecords()
@@ -56,6 +60,23 @@ navigate(){
             recordId: this.activityId,
             objectApiName: 'Task',
             actionName: 'view'
+        }
+    });
+}
+
+closeHandler(){
+    setRecords({recordId:this.emailMessageId})
+    .then(()=>{
+        this.renderedCallback();
+    });
+    
+}
+
+navigate2(){
+    this[NavigationMixin.Navigate]({
+        type: 'standard__namedPage',
+            attributes: {
+                pageName: 'home'
         }
     });
 }
