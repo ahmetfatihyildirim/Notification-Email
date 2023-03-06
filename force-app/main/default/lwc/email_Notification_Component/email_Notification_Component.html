@@ -1,7 +1,9 @@
 <!--https://sfdcsaga.blogspot.com/-->
 <template>
     <template if:false={emailRead}>
-        <div class="close" onclick={closeHandler}>X</div>
+        <div class="close" >
+          <lightning-button icon-name="utility:close"  alternative-text="Close" title="Close" onclick={closeHandler}></lightning-button>
+        </div>
           <div class="letter-image" style="margin-top: 100px;">
               <div class="animated-mail">
                 <div class="back-fold"></div>

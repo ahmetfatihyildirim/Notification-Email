@@ -20,7 +20,7 @@ public with sharing class EmailMessageController {
         string finalActivityId;
 
         List<EmailMessage> listofEmails = new List<EmailMessage>();
-        listofEmails = [SELECT Id,Email_Read__c, ActivityId, Subject, MessageDate FROM EmailMessage where RelatedToId!=null and Email_Read__c!=true ORDER BY MessageDate DESC
+        listofEmails = [SELECT Id,Email_Read__c, ActivityId, Subject, MessageDate FROM EmailMessage where RelatedToId!=null and Email_Read__c!=true ORDER BY MessageDate DESC 
         ];
 
         if(listofEmails.size()>0){
